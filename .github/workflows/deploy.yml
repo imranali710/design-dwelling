@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+# Trigger the action on push to the main branch
+on:
+  push:
+    branches:
+      - main  # Replace with your default branch if different
+
+permissions:
+  contents: write  # Required to deploy to GitHub Pages
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Replace with the Node.js version you are using
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the project
+      - name: Build the project
+        run: npm run build
+
+      # Step 5: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist  # Path to the build output directory
+          user_name: 'GitHub Actions'  # Name to be shown as the author of the commit
+          user_email: 'actions@github.com'  # Email to be shown for commits

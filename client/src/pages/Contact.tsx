@@ -29,15 +29,13 @@ const Contact = () => {
           </motion.div>
           
           <motion.div 
-            className="grid md:grid-cols-2 gap-12"
+            className="grid md:grid-rows-2 gap-12"
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
           >
-            <motion.div variants={fadeInUp}>
-              <ContactForm />
-            </motion.div>
+            
             
             <motion.div variants={fadeIn("left")}>
               <div className="bg-beige p-8 rounded-lg mb-8">

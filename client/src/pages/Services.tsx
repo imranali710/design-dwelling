@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import ServiceCard from "@/components/services/ServiceCard";
 import { servicesData } from "@/data/services";
 import { fadeInUp, staggerContainer } from "@/lib/framer-animations";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Services = () => {
@@ -110,7 +110,7 @@ const Services = () => {
                 Ready to start your project? Contact us to schedule a consultation with our design team.
               </p>
               <div className="flex justify-center">
-                <Link href="/contact">
+                <Link to="/contact">
                   <Button className="bg-terracotta hover:bg-terracotta/90 text-white px-6 py-2">
                     Get in Touch
                   </Button>

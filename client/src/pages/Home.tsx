@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import Hero from "@/components/home/Hero";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { servicesData } from "@/data/services";
@@ -71,7 +71,7 @@ const Home = () => {
                   <p className="text-slate">Projects Completed</p>
                 </div>
               </div>
-              <Link href="/about">
+              <Link to="/about">
                 <Button variant="outline" className="border-terracotta text-terracotta hover:bg-terracotta hover:text-white">
                   Learn More About Us <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -138,7 +138,7 @@ const Home = () => {
           </motion.div>
           
           <div className="text-center">
-            <Link href="/services">
+            <Link to="/services">
               <Button variant="outline" className="border-terracotta text-terracotta hover:bg-terracotta hover:text-white">
                 View All Services <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -192,7 +192,7 @@ const Home = () => {
           </motion.div>
           
           <div className="text-center">
-            <Link href="/portfolio">
+            <Link to="/portfolio">
               <Button variant="outline" className="border-terracotta text-terracotta hover:bg-terracotta hover:text-white">
                 View All Projects <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -209,7 +209,7 @@ const Home = () => {
             <p className="text-lg text-white/90 max-w-2xl mx-auto mb-8">
               Get in touch with our team to schedule a consultation and discuss your project needs.
             </p>
-            <Link href="/contact">
+            <Link to="/contact">
               <Button size="lg" className="bg-terracotta hover:bg-terracotta/90 text-white px-8 py-6 text-lg h-auto">
                 Schedule a Consultation
               </Button>
