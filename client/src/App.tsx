@@ -15,7 +15,7 @@ import Footer from "@/components/layout/Footer";
 
 function AppRouter() {
   return (
-    <Router>
+    <Router basename="/design-dwelling">
       <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<Home />} />
