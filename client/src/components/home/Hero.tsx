@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
@@ -26,7 +26,7 @@ const Hero = () => {
               <p className="text-xl md:text-2xl mb-8 max-w-2xl">
                 Creating custom architectural solutions where beauty meets functionality
               </p>
-              <Link href="/contact">
+              <Link to="/contact">
                 <Button size="lg" className="bg-terracotta hover:bg-terracotta/90 text-white px-8 py-6 text-lg h-auto">
                   Schedule a Consultation
                 </Button>

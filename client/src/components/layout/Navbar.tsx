@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [location] = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,8 +35,8 @@ const Navbar = () => {
   ];
 
   const isActive = (path: string) => {
-    if (path === "/" && location === "/") return true;
-    if (path !== "/" && location.startsWith(path)) return true;
+    if (path === "/" && location.pathname === "/") return true;
+    if (path !== "/" && location.pathname.startsWith(path)) return true;
     return false;
   };
 
@@ -49,29 +49,27 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/">
-              <span className="text-terracotta font-playfair font-bold text-2xl cursor-pointer">
-                ModernHaus
-              </span>
+            <Link to="/" className="text-terracotta font-playfair font-bold text-2xl">
+              ModernHaus
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link key={item.path} href={item.path}>
-                <span
-                  className={`font-medium transition-all cursor-pointer ${
-                    isActive(item.path)
-                      ? "text-terracotta"
-                      : "text-slate hover:text-terracotta"
-                  }`}
-                >
-                  {item.name}
-                </span>
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`font-medium transition-all ${
+                  isActive(item.path)
+                    ? "text-terracotta"
+                    : "text-slate hover:text-terracotta"
+                }`}
+              >
+                {item.name}
               </Link>
             ))}
-            <Link href="/contact">
+            <Link to="/contact">
               <Button className="bg-terracotta hover:bg-terracotta/90 text-white">
                 Schedule Consultation
               </Button>
@@ -107,26 +105,25 @@ const Navbar = () => {
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
-              <Link key={item.path} href={item.path}>
-                <span
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
-                    isActive(item.path)
-                      ? "text-terracotta"
-                      : "text-slate hover:text-terracotta"
-                  } cursor-pointer`}
-                  onClick={closeMobileMenu}
-                >
-                  {item.name}
-                </span>
-              </Link>
-            ))}
-            <Link href="/contact">
-              <span
-                className="block px-3 py-2 mt-4 text-center bg-terracotta text-white rounded-md hover:bg-terracotta/90 transition-all font-medium cursor-pointer"
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  isActive(item.path)
+                    ? "text-terracotta"
+                    : "text-slate hover:text-terracotta"
+                }`}
                 onClick={closeMobileMenu}
               >
-                Schedule Consultation
-              </span>
+                {item.name}
+              </Link>
+            ))}
+            <Link
+              to="/contact"
+              className="block px-3 py-2 mt-4 text-center bg-terracotta text-white rounded-md hover:bg-terracotta/90 transition-all font-medium"
+              onClick={closeMobileMenu}
+            >
+              Schedule Consultation
             </Link>
           </div>
         </motion.div>

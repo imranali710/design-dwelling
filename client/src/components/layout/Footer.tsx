@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { FaInstagram, FaFacebookF, FaPinterest, FaHouzz, FaLinkedinIn } from "react-icons/fa";
 import { MapPin, Phone, Mail } from "lucide-react";
 
@@ -58,27 +58,27 @@ const Footer = () => {
             <h4 className="font-playfair font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/">
+                <Link to="/">
                   <span className="hover:text-terracotta transition-all cursor-pointer">Home</span>
                 </Link>
               </li>
               <li>
-                <Link href="/about">
+                <Link to="/about">
                   <span className="hover:text-terracotta transition-all cursor-pointer">About Us</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services">
+                <Link to="/services">
                   <span className="hover:text-terracotta transition-all cursor-pointer">Services</span>
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio">
+                <Link to="/portfolio">
                   <span className="hover:text-terracotta transition-all cursor-pointer">Portfolio</span>
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
+                <Link to="/contact">
                   <span className="hover:text-terracotta transition-all cursor-pointer">Contact</span>
                 </Link>
               </li>
@@ -89,27 +89,27 @@ const Footer = () => {
             <h4 className="font-playfair font-semibold text-lg mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/services">
+                <Link to="/services">
                   <span className="hover:text-terracotta transition-all cursor-pointer">Architectural Design</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services">
+                <Link to="/services">
                   <span className="hover:text-terracotta transition-all cursor-pointer">Interior Design</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services">
+                <Link to="/services">
                   <span className="hover:text-terracotta transition-all cursor-pointer">3D Visualization</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services">
+                <Link to="/services">
                   <span className="hover:text-terracotta transition-all cursor-pointer">Landscape Design</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services">
+                <Link to="/services">
                   <span className="hover:text-terracotta transition-all cursor-pointer">Project Management</span>
                 </Link>
               </li>
