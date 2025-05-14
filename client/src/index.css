@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 15 80.7% 60.8%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 5% 64.9%;
+  --radius: 0.5rem;
+
+  /* Custom colors */
+  --beige: 39 29.4% 94.5%;
+  --slate: 218 6.5% 36.1%;
+  --charcoal: 0 0% 20%;
+  --terracotta: 14 61.2% 57.8%;
+  --offwhite: 0 0% 98%;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 14 61.2% 57.8%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-inter text-charcoal bg-offwhite;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply font-playfair font-bold text-4xl mb-4 text-center;
+  }
+
+  .section-divider {
+    @apply w-20 h-1 bg-terracotta mx-auto mb-6;
+  }
+
+  .section-description {
+    @apply max-w-3xl mx-auto text-lg text-slate text-center mb-12;
+  }
+}
+
+/* Custom font families */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom colors */
+.bg-beige {
+  background-color: hsl(var(--beige));
+}
+
+.bg-slate {
+  background-color: hsl(var(--slate));
+}
+
+.bg-charcoal {
+  background-color: hsl(var(--charcoal));
+}
+
+.bg-terracotta {
+  background-color: hsl(var(--terracotta));
+}
+
+.bg-offwhite {
+  background-color: hsl(var(--offwhite));
+}
+
+.text-slate {
+  color: hsl(var(--slate));
+}
+
+.text-charcoal {
+  color: hsl(var(--charcoal));
+}
+
+.text-terracotta {
+  color: hsl(var(--terracotta));
+}
+
+.text-offwhite {
+  color: hsl(var(--offwhite));
+}
+
+.border-terracotta {
+  border-color: hsl(var(--terracotta));
+}
+
+.hover\:bg-terracotta:hover {
+  background-color: hsl(var(--terracotta));
+}
+
+.hover\:text-terracotta:hover {
+  color: hsl(var(--terracotta));
+}
